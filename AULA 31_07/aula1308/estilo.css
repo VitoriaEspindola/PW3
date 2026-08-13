@@ -1,0 +1,12 @@
+:root{
+    --corprimaria: purple;
+    --corsec: blue;
+}
+p{
+    color: var(--corprimaria);
+}
+
+section{
+    color: pink;
+    font-family: var(--familia);
+}
