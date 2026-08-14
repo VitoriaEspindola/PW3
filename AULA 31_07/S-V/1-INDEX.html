@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Viagens dos Sonhos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: linear-gradient(135deg, #32105f, #6a1b9a);
+            color: white;
+            padding: 18px 7%;
+        }
+
+        .topo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #ffcc70;
+        }
+
+        /* PESQUISA */
+        .pesquisa {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+        }
+
+        .pesquisa input {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .pesquisa button {
+            padding: 13px 20px;
+            border: none;
+            background: #ffcc70;
+            color: #32105f;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+        }
+
+        .pesquisa button:hover {
+            background: #ffd98e;
+        }
+
+        .menu {
+            display: flex;
+            gap: 18px;
+            margin-top: 18px;
+            justify-content: center;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ffcc70;
+        }
+
+        /* BANNER */
+        .banner {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background:
+                linear-gradient(rgba(20, 10, 40, .45), rgba(20, 10, 40, .45)),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            color: white;
+        }
+
+        .banner-conteudo {
+            max-width: 650px;
+        }
+
+        .banner h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #ffcc70;
+            color: #32105f;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            transform: scale(1.04);
+        }
+
+        /* CONTEÚDO */
+        main {
+            width: 86%;
+            max-width: 1250px;
+            margin: 45px auto;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo h2 {
+            color: #32105f;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .titulo p {
+            color: #666;
+        }
+
+        /* CARDS */
+        .destinos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,.10);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,.18);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-conteudo {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #32105f;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .pais {
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .estrelas {
+            color: #ffb300;
+            margin-bottom: 12px;
+        }
+
+        .descricao {
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 22px;
+            font-weight: bold;
+            color: #6a1b9a;
+            margin-bottom: 15px;
+        }
+
+        .reservar {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 7px;
+            background: #32105f;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .reservar:hover {
+            background: #6a1b9a;
+        }
+
+        /* TABELA */
+        .tabela-area {
+            margin-top: 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #32105f;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f5edff;
+        }
+
+        /* SOBRE */
+        .sobre {
+            margin-top: 60px;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .sobre h2 {
+            color: #32105f;
+            margin-bottom: 15px;
+        }
+
+        .sobre p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #211035;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 60px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #ddd;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 900px) {
+            .destinos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .topo {
+                flex-direction: column;
+            }
+
+            .pesquisa {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .destinos {
+                grid-template-columns: 1fr;
+            }
+
+            .banner h1 {
+                font-size: 35px;
+            }
+
+            .banner p {
+                font-size: 17px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <div class="topo">
+
+            <div class="logo">
+                ✈️ Viagens<span> dos Sonhos</span>
+            </div>
+
+            <div class="pesquisa">
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar destino..."
+                >
+
+                <button onclick="pesquisarDestino()">
+                    🔎 Pesquisar
+                </button>
+            </div>
+
+        </div>
+
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#destinos">Destinos</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#sobre">Sobre nós</a>
+        </nav>
+
+    </header>
+
+
+    <!-- BANNER -->
+    <section class="banner" id="inicio">
+
+        <div class="banner-conteudo">
+
+            <h1>Viaje para os lugares dos seus sonhos 🌎</h1>
+
+            <p>
+                Encontre destinos incríveis, descubra novas culturas
+                e viva experiências inesquecíveis.
+            </p>
+
+            <a href="#destinos" class="botao">
+                Explorar destinos
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <main>
+
+        <!-- DESTINOS -->
+        <section id="destinos">
+
+            <div class="titulo">
+                <h2>🌎 Destinos favoritos</h2>
+
+                <p>
+                    Escolha seu próximo destino e comece a planejar sua viagem.
+                </p>
+            </div>
+
+
+            <div class="destinos">
+
+                <!-- PARIS -->
+                <div class="card" data-destino="Paris">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80"
+                        alt="Paris"
+                    >
+
+                    <div class="card-conteudo">
+
+                        <h3>🇫🇷 Paris</h3>
+
+                        <p class="pais">
+                            França
+                        </p>
+
+                        <div class="estrelas">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+
+                        <p class="descricao">
+                            Conheça a Torre Eiffel, o Museu do Louvre
+                            e as belas ruas de Paris.
+                        </p>
+
+                        <p class="preco">
+                            A partir de R$ 3.499
+                        </p>
+
+                        <button
+                            class="reservar"
+                            onclick="reservar('Paris')"
+                        >
+                            ✈️ Ver viagem
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TÓQUIO -->
+                <div class="card" data-destino="Tóquio">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&q=80"
+                        alt="Tóquio"
+                    >
+
+                    <div class="card-conteudo">
+
+                        <h3>🇯🇵 Tóquio</h3>
+
+                        <p class="pais">
+                            Japão
+                        </p>
+
+                        <div class="estrelas">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+
+                        <p class="descricao">
+                            Descubra a cultura japonesa, tecnologia,
+                            gastronomia e lugares incríveis.
+                        </p>
+
+                        <p class="preco">
+                            A partir de R$ 5.999
+                        </p>
+
+                        <button
+                            class="reservar"
+                            onclick="reservar('Tóquio')"
+                        >
+                            ✈️ Ver viagem
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIO -->
+                <div class="card" data-destino="Rio de Janeiro">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=80"
+                        alt="Rio de Janeiro"
+                    >
+
+                    <div class="card-conteudo">
+
+                        <h3>🇧🇷 Rio de Janeiro</h3>
+
+                        <p class="pais">
+                            Brasil
+                        </p>
+
+                        <div class="estrelas">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+
+                        <p class="descricao">
+                            Aproveite as praias, o Cristo Redentor
+                            e as paisagens incríveis do Rio.
+                        </p>
+
+                        <p class="preco">
+                            A partir de R$ 899
+                        </p>
+
+                        <button
+                            class="reservar"
+                            onclick="reservar('Rio de Janeiro')"
+                        >
+                            ✈️ Ver viagem
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TABELA -->
+        <section class="tabela-area" id="ofertas">
+
+            <div class="titulo">
+
+                <h2>🔥 Ofertas de viagens</h2>
+
+                <p>
+                    Confira alguns dos nossos destinos.
+                </p>
+
+            </div>
+
+            <table>
+
+                <tr>
+                    <th>Destino</th>
+                    <th>País</th>
+                    <th>Preço</th>
+                    <th>Motivo</th>
+                </tr>
+
+                <tr>
+                    <td>Paris</td>
+                    <td>França</td>
+                    <td>R$ 3.499</td>
+                    <td>Pontos turísticos</td>
+                </tr>
+
+                <tr>
+                    <td>Tóquio</td>
+                    <td>Japão</td>
+                    <td>R$ 5.999</td>
+                    <td>Cultura e tecnologia</td>
+                </tr>
+
+                <tr>
+                    <td>Rio de Janeiro</td>
+                    <td>Brasil</td>
+                    <td>R$ 899</td>
+                    <td>Praias e paisagens</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- SOBRE -->
+        <section class="sobre" id="sobre">
+
+            <h2>💜 Sobre o projeto</h2>
+
+            <p>
+                Viajar é uma forma de conhecer novos lugares,
+                culturas e pessoas.
+                <br><br>
+
+                O projeto <strong>Viagens dos Sonhos</strong>
+                foi desenvolvido por <strong>Vitória e Murilo</strong>
+                com o objetivo de apresentar destinos incríveis
+                e incentivar as pessoas a conhecerem o mundo.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <h2>✈️ Viagens dos Sonhos</h2>
+
+        <p>
+            Projeto desenvolvido por Vitória e Murilo.
+        </p>
+
+        <p>
+            © 2026 - Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function reservar(destino) {
+
+            alert(
+                "✈️ Você escolheu viajar para " +
+                destino +
+                "!\n\nEm breve você poderá conferir todos os detalhes dessa viagem."
+            );
+
+        }
+
+
+        function pesquisarDestino() {
+
+            let pesquisa =
+                document.getElementById("pesquisa")
+                .value
+                .toLowerCase();
+
+            let cards =
+                document.querySelectorAll(".card");
+
+            let encontrou = false;
+
+            cards.forEach(function(card) {
+
+                let destino =
+                    card.dataset.destino.toLowerCase();
+
+                if (destino.includes(pesquisa)) {
+
+                    card.style.display = "block";
+
+                    encontrou = true;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            if (pesquisa === "") {
+
+                cards.forEach(function(card) {
+
+                    card.style.display = "block";
+
+                });
+
+            }
+
+
+            if (!encontrou && pesquisa !== "") {
+
+                alert(
+                    "😔 Não encontramos esse destino."
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
