@@ -1,0 +1,379 @@
+/* ===== RESET E ESTILOS GERAIS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f1015;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER (FLEXBOX) ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #181a20;
+  border-bottom: 2px solid #00ff88;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #ff0055;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00ff88;
+}
+
+.btn-inscrever {
+  background-color: #ff0055;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-inscrever:hover {
+  background-color: #e0004c;
+  transform: scale(1.05);
+}
+
+/* ===== LAYOUT PRINCIPAL DO BLOG (GRID SIDEBAR + CONTEÚDO) ===== */
+.main-layout {
+  display: grid;
+  grid-template-columns: 2.8fr 1.2fr;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* ===== POST EM DESTAQUE ===== */
+.featured-post {
+  background-color: #181a20;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #2a2e3d;
+  margin-bottom: 40px;
+}
+
+.featured-img-container {
+  position: relative;
+}
+
+.featured-post img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #ff0055;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.featured-content {
+  padding: 25px;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.featured-content h1 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #00ff88;
+  margin-bottom: 15px;
+}
+
+.featured-content p {
+  color: #b0b0b0;
+  margin-bottom: 20px;
+}
+
+.btn-read {
+  display: inline-block;
+  color: #00ff88;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.btn-read:hover {
+  transform: translateX(5px);
+}
+
+/* ===== SEÇÃO E CARDS DE NOTÍCIAS (CSS GRID) ===== */
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-left: 4px solid #00ff88;
+  padding-left: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #181a20;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #2a2e3d;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* ESCONDE CARDS COM A CLASSE HIDDEN */
+.card.hidden {
+  display: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 255, 136, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-tag {
+  font-size: 0.7rem;
+  color: #00ff88;
+  background-color: #2a2e3d;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #2a2e3d;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.read-more {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+/* ===== BOTÃO CARREGAR MAIS ===== */
+.load-more-container {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+#btn-load-more {
+  background-color: transparent;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-load-more:hover {
+  background-color: #00ff88;
+  color: #0f1015;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ===== BARRA LATERAL (SIDEBAR) ===== */
+.widget {
+  background-color: #181a20;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #2a2e3d;
+  margin-bottom: 25px;
+}
+
+.widget h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #00ff88;
+}
+
+.trending-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a2e3d;
+}
+
+.trending-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.trending-list .number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff0055;
+}
+
+.trending-list a {
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.trending-list a:hover {
+  color: #00ff88;
+}
+
+/* NEWSLETTER WIDGET */
+.newsletter-widget p {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.newsletter-widget input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #2a2e3d;
+  background-color: #0f1015;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.newsletter-widget button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00ff88;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.newsletter-widget button:hover {
+  background-color: #00cc6d;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #181a20;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #2a2e3d;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVIDADE (@MEDIA QUERIES) ===== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .featured-post img {
+    height: 220px;
+  }
+}

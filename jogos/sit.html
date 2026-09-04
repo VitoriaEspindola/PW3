@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameNews - O Seu Blog de Jogos</title>
+  <!-- Ligação com o arquivo CSS atualizada para blog.css -->
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO (FLEXBOX) -->
+  <header>
+    <div class="logo">Game<span>News</span></div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Notícias</a>
+      <a href="#">Análises</a>
+      <a href="#">E-sports</a>
+      <a href="#">Guias</a>
+      <a href="#" class="btn-inscrever">Inscrever-se</a>
+    </nav>
+  </header>
+
+  <!-- CONTAINER PRINCIPAL DO BLOG -->
+  <div class="container main-layout">
+
+    <!-- CONTEÚDO PRINCIPAL DO BLOG -->
+    <main>
+      <!-- NOTÍCIA DESTAQUE PRINCIPAL -->
+      <article class="featured-post">
+        <div class="featured-img-container">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" alt="Jogo do Ano">
+          <span class="badge">Destaque</span>
+        </div>
+        <div class="featured-content">
+          <div class="post-meta">Por <strong>Lucas Silva</strong> | 03 de Setembro, 2026</div>
+          <h1>Novo RPG de Ficção Científica Promete Revolucionar a Indústria de Games</h1>
+          <p>Confira nossa análise detalhada sobre o novo lançamento que promete gráficos ultra-realistas e um sistema de inteligência artificial jamais visto.</p>
+          <a href="#" class="btn-read">Ler Matéria Completa &rarr;</a>
+        </div>
+      </article>
+
+      <h2 class="section-title">Últimas Publicações</h2>
+
+      <!-- GRADE DE POSTS DO BLOG (CSS GRID) -->
+      <section class="cards">
+
+        <!-- CARDS INICIAIS (VISÍVEIS) -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80" alt="Cyber Arena">
+          <div class="card-content">
+            <span class="card-tag">Análise</span>
+            <h3>Cyber Arena 2077: Vale a pena jogar no lançamento?</h3>
+            <p>Analisamos os pontos fortes e os problemas do mais novo shooter futurista.</p>
+            <div class="card-footer">
+              <span class="date">Há 2 horas</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="RPG Fantasia">
+          <div class="card-content">
+            <span class="card-tag">Guia</span>
+            <h3>10 Dicas essenciais para dominar o início de Realm of Magic</h3>
+            <p>Guia completo para iniciantes mandarem bem nas primeiras horas de campanha.</p>
+            <div class="card-footer">
+              <span class="date">Há 5 horas</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Jogos Retro">
+          <div class="card-content">
+            <span class="card-tag">Retrô</span>
+            <h3>A ascensão dos jogos em Pixel Art no cenário indie contemporâneo</h3>
+            <p>Por que os desenvolvedores continuam apostando no estilo retro no ano de 2026?</p>
+            <div class="card-footer">
+              <span class="date">Ontem</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Hardware Gamer">
+          <div class="card-content">
+            <span class="card-tag">Hardware</span>
+            <h3>Novas placas de vídeo prometem rodar tudo em 4K a 120 FPS</h3>
+            <p>Acompanhe os testes de benchmark das novas GPUs lançadas nesta semana.</p>
+            <div class="card-footer">
+              <span class="date">Há 2 dias</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARDS QUE INICIAM ESCONDIDOS (CLASSE 'hidden') -->
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=600&q=80" alt="Luta Arcade">
+          <div class="card-content">
+            <span class="card-tag">E-sports</span>
+            <h3>Novo torneio mundial de jogos de luta terá premiação recorde</h3>
+            <p>Os maiores pro-players do mundo se reúnem para disputar o título máximo da temporada.</p>
+            <div class="card-footer">
+              <span class="date">Há 3 dias</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=600&q=80" alt="Setup VR">
+          <div class="card-content">
+            <span class="card-tag">Tecnologia</span>
+            <h3>Óculos de Realidade Virtual sem fio ganham nova geração mais leve</h3>
+            <p>Testamos o novo headset VR e contamos o que achamos da experiência de imersão.</p>
+            <div class="card-footer">
+              <span class="date">Há 3 dias</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=600&q=80" alt="Simulador">
+          <div class="card-content">
+            <span class="card-tag">Lançamento</span>
+            <h3>Simulador de corrida recebe gráficos fotorrealistas e física aprimorada</h3>
+            <p>A atualização traz novos carros esportivos e suporte para cockpits profissionais.</p>
+            <div class="card-footer">
+              <span class="date">Há 4 dias</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Mobile Gaming">
+          <div class="card-content">
+            <span class="card-tag">Mobile</span>
+            <h3>Jogos mobile ultrapassam consoles em faturamento este ano</h3>
+            <p>Relatório mostra como o mercado de smartphones se consolidou no mundo dos games.</p>
+            <div class="card-footer">
+              <span class="date">Há 5 dias</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=600&q=80" alt="Estratégia">
+          <div class="card-content">
+            <span class="card-tag">Análise</span>
+            <h3>Jogo de Estratégia em Tempo Real ganha versão remasterizada</h3>
+            <p>Um clássico dos anos 2000 retorna com texturas em 4K e modo multiplayer renovado.</p>
+            <div class="card-footer">
+              <span class="date">Há 5 dias</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=600&q=80" alt="Controle Gamer">
+          <div class="card-content">
+            <span class="card-tag">Periféricos</span>
+            <h3>Como escolher o melhor controle para jogar no PC em 2026</h3>
+            <p>Comparamos gatilhos magnéticos, conexões sem fio e custo-benefício do mercado.</p>
+            <div class="card-footer">
+              <span class="date">Há 6 dias</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" alt="MMORPG">
+          <div class="card-content">
+            <span class="card-tag">Notícias</span>
+            <h3>Novo MMORPG gratuito atinge 1 milhão de jogadores na primeira semana</h3>
+            <p>Servidores ficaram lotados durante o final de semana de estreia do título.</p>
+            <div class="card-footer">
+              <span class="date">Há 1 semana</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Trilha Sonora">
+          <div class="card-content">
+            <span class="card-tag">Especial</span>
+            <h3>As 10 melhores trilhas sonoras de jogos de todos os tempos</h3>
+            <p>Relembre as músicas marcantes que definiram gerações de jogadores.</p>
+            <div class="card-footer">
+              <span class="date">Há 1 semana</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card hidden">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Desenvolvimento">
+          <div class="card-content">
+            <span class="card-tag">Indie</span>
+            <h3>Estúdio brasileiro lança jogo inspirado no folclore nacional</h3>
+            <p>Com belos visuais desenhados à mão, o projeto chamou a atenção no exterior.</p>
+            <div class="card-footer">
+              <span class="date">Há 1 semana</span>
+              <a href="#" class="read-more">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- BOTÃO CARREGAR MAIS -->
+      <div class="load-more-container">
+        <button id="btn-load-more">Carregar Mais Publicações</button>
+      </div>
+    </main>
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar">
+      
+      <!-- WIDGET 1: MAIS LIDOS -->
+      <div class="widget">
+        <h3>🔥 Mais Lidos</h3>
+        <ul class="trending-list">
+          <li>
+            <span class="number">1</span>
+            <a href="#">Rumor: Sequência de grande franquia pode ser anunciada em breve</a>
+          </li>
+          <li>
+            <span class="number">2</span>
+            <a href="#">Atualização de firmware melhora o desempenho dos consoles</a>
+          </li>
+          <li>
+            <span class="number">3</span>
+            <a href="#">Campeonato Mundial de eSports bate recorde de audiência</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- WIDGET 2: NEWSLETTER -->
+      <div class="widget newsletter-widget">
+        <h3>📩 Receba as Notícias</h3>
+        <p>Receba diariamente as novidades do mundo dos jogos diretamente no seu e-mail.</p>
+        <form>
+          <input type="email" placeholder="Seu e-mail..." required>
+          <button type="submit">Inscrever-se</button>
+        </form>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>&copy; 2026 GameNews. Todos os direitos reservados. Desenvolvido para fins de estudo em HTML e CSS.</p>
+  </footer>
+
+  <!-- SCRIPT JS PARA O BOTÃO 'CARREGAR MAIS' -->
+  <script>
+    const btnLoadMore = document.getElementById('btn-load-more');
+    const hiddenCards = document.querySelectorAll('.card.hidden');
+
+    const cardsPerClick = 3; 
+    let currentVisibleIndex = 0;
+
+    btnLoadMore.addEventListener('click', () => {
+      for (let i = currentVisibleIndex; i < currentVisibleIndex + cardsPerClick; i++) {
+        if (hiddenCards[i]) {
+          hiddenCards[i].classList.remove('hidden');
+        }
+      }
+
+      currentVisibleIndex += cardsPerClick;
+
+      if (currentVisibleIndex >= hiddenCards.length) {
+        btnLoadMore.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
